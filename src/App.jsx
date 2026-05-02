@@ -420,20 +420,50 @@ function App() {
                 <span className="details-deadline">📅 Due: {selectedScholarshipData.deadline || "TBA"}</span>
               </div>
             </div>
+            
             <div className="details-body-card">
               <div className="details-section">
                 <h3>Description</h3>
                 <p>{selectedScholarshipData.description || "No description provided."}</p>
               </div>
-              <div className="details-section">
-                <h3>Qualifications</h3>
-                <ul>{selectedScholarshipData.qualifications ? selectedScholarshipData.qualifications.map((qual, index) => <li key={index}>{qual}</li>) : <li>See official link.</li>}</ul>
-              </div>
-              <div className="details-section">
-                <h3>Requirements to Apply</h3>
-                <ul>{selectedScholarshipData.requirements ? selectedScholarshipData.requirements.map((req, index) => <li key={index}>{req}</li>) : <li>See official link.</li>}</ul>
-              </div>
+
+              {/* ONLY shows if the scholarship has partnerScholarships (like NEUST) */}
+              {selectedScholarshipData.partnerScholarships && (
+                <div className="details-section">
+                  <h3>Scholarships</h3>
+                  <ul>
+                    {selectedScholarshipData.partnerScholarships.map((schol, index) => (
+                      <li key={index}>{schol}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* ONLY shows if the scholarship has qualifications */}
+              {selectedScholarshipData.qualifications && (
+                <div className="details-section">
+                  <h3>Qualifications</h3>
+                  <ul>
+                    {selectedScholarshipData.qualifications.map((qual, index) => (
+                      <li key={index}>{qual}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* ONLY shows if the scholarship has requirements */}
+              {selectedScholarshipData.requirements && (
+                <div className="details-section">
+                  <h3>Requirements to Apply</h3>
+                  <ul>
+                    {selectedScholarshipData.requirements.map((req, index) => (
+                      <li key={index}>{req}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
+
             <div className="details-footer">
               <a href={selectedScholarshipData.link} target="_blank" rel="noreferrer" className="official-link-btn">Go to Official Application Page</a>
               <button className={`save-btn ${savedScholarships.includes(selectedScholarshipData.id) ? 'active' : ''}`} onClick={() => handleToggleSave(selectedScholarshipData.id, selectedScholarshipData.title)}>
