@@ -8,23 +8,28 @@ export const locations = [
   export const scholarships = [
     {
       id: 1,
-      title: "NEUST Scholarship",
+      title: "NEUST Scholarship and Financial Assistance Office",
       provider: "NEUST",
       locations: ["All of Nueva Ecija"],
       type: "College",
       amount: "Varies",
-      deadline: "2026-04-26",
-      link: "https://www.facebook.com/share/1SYKEZCuNc/",
-      description: "The NEUST provides financial assistance to deserving and qualified students through university-funded and externally-funded scholarships. The goal is to support students with financial need, academic excellence, or special talents while studying at NEUST.",
-      qualifications: [
-        "Must be a student of NEUST",
-        "Annual Income not more than ₱100,000",
-        "No failing grade in previous semester"
-      ],
-      requirements: [
-        "Certificate of Grades: First Year, 2nd Semester / Second Year, 1st Semester",
-        "Photocopy of NEUST ID with three specimen signatures",
-        "Photocopy of parent/guardian government-issued ID with specimen signatures"
+      deadline: "2026-05-15",
+      link: "https://www.facebook.com/share/1SYkEZCuNc/",
+      description: "The social media platform of NEUST provides and share information about upcoming scholarships that could help students financially. To check for more informations: You may click the link below, it will direct you on the official page. These are the scholarships that NEUST is working with:",
+      // NEW: Replaced qualifications and requirements with this list
+      partnerScholarships: [
+        "BDB Law Foundation Scholarship Program",
+        "Tulong Dunong Program",
+        "Tertiary Education Subsidy",
+        "Education for Development",
+        "SM Scholarship",
+        "Ayala Foundation Scholarship",
+        "Aboitiz College Scholarship Program",
+        "GBF College Scholarship Program",
+        "Megaworld Foundation Scholarship",
+        "DOST-SEI Undergraduate Scholarship",
+        "OWWA Scholarship Program",
+        "CHED Merit Scholarship Program"
       ]
     },
     {
